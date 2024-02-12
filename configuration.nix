@@ -420,7 +420,7 @@
       ani-cli
       mangal
       mangohud
-      yuzu-mainline
+      stable.yuzu-mainline
       ryujinx
       stable.cemu
       rpcs3
