@@ -424,6 +424,10 @@
       ryujinx
       stable.cemu
       rpcs3
+
+      #NTFS
+      fuse
+      ntfs3g
     ];
   };
 
