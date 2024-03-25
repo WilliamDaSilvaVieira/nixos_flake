@@ -423,7 +423,7 @@
       stable.yuzu-mainline
       ryujinx
       stable.cemu
-      rpcs3
+      stable.rpcs3
 
       #NTFS
       fuse
