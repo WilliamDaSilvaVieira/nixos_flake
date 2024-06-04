@@ -98,6 +98,9 @@
 
   console = {
     font = "Terminus";
+    packages = with pkgs; [
+      terminus_font
+    ];
     keyMap = "br-abnt2";
     colors = [
       # Use terminal.sexy with alacritty
