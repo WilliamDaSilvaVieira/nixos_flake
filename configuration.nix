@@ -2,19 +2,26 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
-{ config, pkgs, inputs, outputs, lib, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  outputs,
+  lib,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      # <home-manager/nixos>
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    # <home-manager/nixos>
+  ];
 
   # Boot.
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelParams = [ 
+    kernelParams = [
       "nvidia_drm.modeset=1"
       "amd_iommu=on"
       "iommu=pt"
@@ -78,14 +85,14 @@
   i18n = {
     defaultLocale = "pt_BR.UTF-8"; # Erros, Warnings, Etc ...
     extraLocaleSettings = {
-      LC_ADDRESS     = "pt_BR.UTF-8";
+      LC_ADDRESS = "pt_BR.UTF-8";
       LC_MEASUREMENT = "pt_BR.UTF-8";
-      LC_MONETARY    = "pt_BR.UTF-8";
-      LC_NAME        = "pt_BR.UTF-8";
-      LC_NUMERIC     = "pt_BR.UTF-8";
-      LC_PAPER       = "pt_BR.UTF-8";
-      LC_TELEFONE    = "pt_BR.UTF-8";
-      LC_TIME        = "pt_BR.UTF-8";
+      LC_MONETARY = "pt_BR.UTF-8";
+      LC_NAME = "pt_BR.UTF-8";
+      LC_NUMERIC = "pt_BR.UTF-8";
+      LC_PAPER = "pt_BR.UTF-8";
+      LC_TELEFONE = "pt_BR.UTF-8";
+      LC_TIME = "pt_BR.UTF-8";
     };
   };
 
@@ -200,7 +207,7 @@
       forceFullCompositionPipeline = true;
       nvidiaSettings = true;
       modesetting.enable = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
 
     # Opengl
@@ -208,9 +215,7 @@
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
-      extraPackages = with pkgs; [
-        nvidia-vaapi-driver
-      ];
+      extraPackages = with pkgs; [ nvidia-vaapi-driver ];
     };
 
     # PulseAudio
@@ -233,7 +238,11 @@
     users = {
       william = {
         isNormalUser = true;
-        extraGroups = [ "wheel" "networkmanager" "libvirtd" ];
+        extraGroups = [
+          "wheel"
+          "networkmanager"
+          "libvirtd"
+        ];
       };
     };
   };
@@ -254,23 +263,23 @@
     spiceUSBRedirection.enable = true;
   };
   systemd.services.libvirtd = {
-    path = let
-            env = pkgs.buildEnv {
-              name = "qemu-hook-env";
-              paths = with pkgs; [
-                bash
-                libvirt
-                kmod
-                systemd
-                ripgrep
-                sd
-              ];
-            };
-          in
-          [ env ];
+    path =
+      let
+        env = pkgs.buildEnv {
+          name = "qemu-hook-env";
+          paths = with pkgs; [
+            bash
+            libvirt
+            kmod
+            systemd
+            ripgrep
+            sd
+          ];
+        };
+      in
+      [ env ];
 
-    preStart = 
-    ''
+    preStart = ''
       mkdir -p /var/lib/libvirt/hooks
       mkdir -p /var/lib/libvirt/hooks/qemu.d/win11/prepare/begin
       mkdir -p /var/lib/libvirt/hooks/qemu.d/win11/release/end
@@ -288,7 +297,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment = {
-    defaultPackages = [];
+    defaultPackages = [ ];
     systemPackages = with pkgs; [
       #### Core
       lld
@@ -324,6 +333,10 @@
       lolcat
       figlet
 
+      # Nix
+      nil
+      nixfmt-rfc-style
+
       #### Browser
       (google-chrome.override {
         commandLineArgs = [
@@ -347,41 +360,42 @@
       #Virtualization
       virt-manager
       virt-viewer
-      spice spice-gtk
+      spice
+      spice-gtk
       spice-protocol
       win-virtio
       win-spice
       gnome.adwaita-icon-theme
 
       #### Programing
-        ### Languages
-          # Rust
-          rustup
-          # Python
-          python3
+      ### Languages
+      # Rust
+      rustup
+      # Python
+      python3
 
-          # Dependencies
-          rocmPackages.llvm.lldb
+      # Dependencies
+      rocmPackages.llvm.lldb
 
-          # Nix
-          nil
+      # Nix
+      nil
 
-          # Markdown
-          marksman
-          slides
-          graph-easy
-          glow
+      # Markdown
+      marksman
+      slides
+      graph-easy
+      glow
 
-          # Bash
-          nodePackages_latest.bash-language-server
+      # Bash
+      nodePackages_latest.bash-language-server
 
-          # Editors
-          helix
+      # Editors
+      helix
 
-          # Tools
-          lazygit
-          tokei
-        
+      # Tools
+      lazygit
+      tokei
+
       #### Proprietary
       (discord.override {
         withOpenASAR = true;
@@ -420,7 +434,7 @@
       ani-cli
       mangal
       mangohud
-      stable.yuzu-mainline
+      nixpkgs-23_11.yuzu-mainline
       ryujinx
       stable.cemu
       stable.rpcs3
@@ -507,24 +521,26 @@
     rtkit.enable = true;
     doas = {
       enable = true;
-      extraRules = [{
-        groups = [ "wheel" ];
-        keepEnv = true;
-        persist = true;
-      }];
+      extraRules = [
+        {
+          groups = [ "wheel" ];
+          keepEnv = true;
+          persist = true;
+        }
+      ];
     };
   };
 
   # Variables
   environment.variables = {
     XCURSOR_SIZE = "48";
-    
+
     FZF_DEFAULT_COMMAND = "fd -H";
 
     LIBSEAT_BACKEND = "logind";
 
     WLR_NO_HARDWARE_CURSORS = "1";
-    WLR_RENDERER = "vulkan";
+    # WLR_RENDERER = "vulkan";
     WLR_DRM_NO_ATOMIC = "1";
 
     NIXOS_OZONE_WL = "1";
@@ -550,11 +566,12 @@
     config = {
       allowUnfree = true;
     };
-    overlays = [ 
+    overlays = [
       outputs.overlays.stable-packages
-      (final: prev: { 
+      outputs.overlays.nixpkgs-23_11-packages
+      (final: prev: {
         awesome = inputs.nixpkgs-f2k.packages.${final.system}.awesome-luajit-git;
-        discord = prev.discord.overrideAttrs(_: {
+        discord = prev.discord.overrideAttrs (_: {
           src = builtins.fetchTarball {
             url = "https://discord.com/api/download?platform=linux&format=tar.gz";
             sha256 = "0qzdvyyialvpiwi9mppbqvf2rvz1ps25mmygqqck0z9i2q01c1zd";
@@ -565,23 +582,18 @@
   };
 
   nix = {
-    package = pkgs.nixFlakes;
-    extraOptions = "experimental-features = nix-command flakes";
-    
+    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
+    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
     settings = {
-      # Enable flakes and new 'nix' command
-      experimental-features = ["nix-command" "flakes"];
-      # Deduplicate and optimize nix store
+      experimental-features = "nix-command flakes";
       auto-optimise-store = true;
     };
-
     gc = {
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
   };
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -602,7 +614,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
-
+  system.stateVersion = "24.11"; # Did you read the comment?
 }
-

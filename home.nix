@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   home.stateVersion = "24.05";
 
   services.mpris-proxy.enable = true;
