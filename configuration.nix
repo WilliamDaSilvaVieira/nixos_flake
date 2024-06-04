@@ -83,7 +83,7 @@
 
   # Select internationalisation properties.
   i18n = {
-    defaultLocale = "pt_BR.UTF-8"; # Erros, Warnings, Etc ...
+    defaultLocale = "en_US.UTF-8"; # Erros, Warnings, Etc ...
     extraLocaleSettings = {
       LC_ADDRESS = "pt_BR.UTF-8";
       LC_MEASUREMENT = "pt_BR.UTF-8";
@@ -207,7 +207,7 @@
       forceFullCompositionPipeline = true;
       nvidiaSettings = true;
       modesetting.enable = true;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
+      package = config.boot.kernelPackages.nvidiaPackages.production;
     };
 
     # Opengl
@@ -377,9 +377,6 @@
       # Dependencies
       rocmPackages.llvm.lldb
 
-      # Nix
-      nil
-
       # Markdown
       marksman
       slides
@@ -465,6 +462,7 @@
     };
     hyprland = {
       enable = true;
+      # package = pkgs.nixpkgs-23_11.hyprland;
       xwayland = {
         enable = true;
       };
@@ -540,7 +538,7 @@
     LIBSEAT_BACKEND = "logind";
 
     WLR_NO_HARDWARE_CURSORS = "1";
-    # WLR_RENDERER = "vulkan";
+    WLR_RENDERER = "vulkan";
     WLR_DRM_NO_ATOMIC = "1";
 
     NIXOS_OZONE_WL = "1";
