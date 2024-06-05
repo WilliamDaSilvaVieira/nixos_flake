@@ -106,7 +106,7 @@
       # Use terminal.sexy with alacritty
       # Material
       "192024"
-      "7b0404"
+      "ed2e30"
       "099923"
       "0ca9c6"
       "218354"
@@ -465,7 +465,7 @@
     };
     hyprland = {
       enable = true;
-      # package = pkgs.nixpkgs-23_11.hyprland;
+      package = pkgs.nixpkgs-23_11.hyprland;
       xwayland = {
         enable = true;
       };
