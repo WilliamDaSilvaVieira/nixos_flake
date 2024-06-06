@@ -484,7 +484,7 @@
   xdg = {
     portal = {
       enable = true;
-      wlr.enable = true;
+      # wlr.enable = true;
     };
     icons.enable = true;
     mime = {
