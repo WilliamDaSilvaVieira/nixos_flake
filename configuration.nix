@@ -20,7 +20,7 @@
 
   # Boot.
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_testing;
     extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
     kernelParams = [
       "nvidia_drm.modeset=1"
