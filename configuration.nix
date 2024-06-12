@@ -21,6 +21,7 @@
   # Boot.
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
+    extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
     kernelParams = [
       "nvidia_drm.modeset=1"
       "amd_iommu=on"
@@ -33,7 +34,7 @@
       "nvidia_drm"
       "vfio-pci"
     ];
-    blacklistedKernelModules = [ "kms" ];
+    # blacklistedKernelModules = [ "kms" ];
     loader = {
       systemd-boot.enable = true;
       timeout = 0;
