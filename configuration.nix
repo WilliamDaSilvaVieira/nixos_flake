@@ -465,7 +465,7 @@
     };
     hyprland = {
       enable = true;
-      package = pkgs.nixpkgs-23_11.hyprland;
+      # package = pkgs.nixpkgs-23_11.hyprland;
       xwayland = {
         enable = true;
       };
