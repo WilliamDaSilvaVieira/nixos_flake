@@ -432,6 +432,9 @@
       wf-recorder
       wlroots
 
+      #Niri
+      niri
+
       ani-cli
       mangal
       mangohud
