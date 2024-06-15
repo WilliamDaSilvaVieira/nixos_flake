@@ -21,17 +21,17 @@
   # Boot.
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+    # extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
     kernelParams = [
-      "nvidia_drm.modeset=1"
+      # "nvidia_drm.modeset=1"
       "amd_iommu=on"
       "iommu=pt"
     ];
     kernelModules = [
-      "nvidia"
-      "nvidia_modeset"
-      "nvidia_uvm"
-      "nvidia_drm"
+      # "nvidia"
+      # "nvidia_modeset"
+      # "nvidia_uvm"
+      # "nvidia_drm"
       "vfio-pci"
     ];
     # blacklistedKernelModules = [ "kms" ];
@@ -191,7 +191,7 @@
       enable = true;
       xkb.layout = "br";
       excludePackages = with pkgs; [ xterm ];
-      videoDrivers = [ "nvidia" ];
+      # videoDrivers = [ "nvidia" ];
       displayManager.startx.enable = true;
       windowManager.awesome.enable = true;
     };
@@ -206,20 +206,20 @@
     };
 
     # Nvidia
-    nvidia = {
-      powerManagement.enable = true;
-      forceFullCompositionPipeline = true;
-      nvidiaSettings = true;
-      modesetting.enable = true;
-      package = config.boot.kernelPackages.nvidiaPackages.production;
-    };
+    # nvidia = {
+    #   powerManagement.enable = true;
+    #   forceFullCompositionPipeline = true;
+    #   nvidiaSettings = true;
+    #   modesetting.enable = true;
+    #   package = config.boot.kernelPackages.nvidiaPackages.beta;
+    # };
 
     # Opengl
     opengl = {
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
-      extraPackages = with pkgs; [ nvidia-vaapi-driver ];
+      # extraPackages = with pkgs; [ nvidia-vaapi-driver ];
     };
 
     # PulseAudio
@@ -432,9 +432,6 @@
       wf-recorder
       wlroots
 
-      #Niri
-      niri
-
       ani-cli
       mangal
       mangohud
@@ -545,7 +542,7 @@
     LIBSEAT_BACKEND = "logind";
 
     WLR_NO_HARDWARE_CURSORS = "1";
-    WLR_RENDERER = "vulkan";
+    # WLR_RENDERER = "vulkan";
     WLR_DRM_NO_ATOMIC = "1";
 
     NIXOS_OZONE_WL = "1";
@@ -558,10 +555,10 @@
 
     KITTY_ENABLE_WAYLAND = "1";
 
-    LIBVA_DRIVER_NAME = "nvidia";
+    # LIBVA_DRIVER_NAME = "nvidia";
     XDG_SESSION_TYPE = "wayland";
-    GBM_BACKEND = "nvidia-drm";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    # GBM_BACKEND = "nvidia-drm";
+    # __GLX_VENDOR_LIBRARY_NAME = "nvidia";
 
     EDITOR = "hx";
     VISUAL = "hx";
