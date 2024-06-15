@@ -20,7 +20,7 @@
 
   # Boot.
   boot = {
-    kernelPackages = pkgs.linuxPackages_testing;
+    kernelPackages = pkgs.linuxPackages_latest;
     extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
     kernelParams = [
       "nvidia_drm.modeset=1"
@@ -388,7 +388,7 @@
       glow
 
       # Bash
-      nodePackages_latest.bash-language-server
+      stable.nodePackages.bash-language-server
 
       # Editors
       helix
