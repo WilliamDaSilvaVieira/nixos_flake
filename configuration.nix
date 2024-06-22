@@ -180,10 +180,6 @@
       browsing = true;
       defaultShared = true;
     };
-    transmission = {
-      enable = true;
-      package = pkgs.transmission-gtk;
-    };
     udisks2 = {
       enable = true;
     };
@@ -211,14 +207,12 @@
     #   forceFullCompositionPipeline = true;
     #   nvidiaSettings = true;
     #   modesetting.enable = true;
-    #   package = config.boot.kernelPackages.nvidiaPackages.beta;
+    #   package = config.boot.kernelPackages.nvidiaPackages.production;
     # };
 
-    # Opengl
-    opengl = {
+    # Opengl(?)
+    graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
       # extraPackages = with pkgs; [ nvidia-vaapi-driver ];
     };
 
@@ -360,6 +354,7 @@
       ffmpegthumbnailer
       mpv
       cinnamon.warpinator
+      transmission_4-gtk
 
       #Virtualization
       virt-manager
