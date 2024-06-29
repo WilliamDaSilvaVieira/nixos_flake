@@ -207,7 +207,8 @@
     #   forceFullCompositionPipeline = true;
     #   nvidiaSettings = true;
     #   modesetting.enable = true;
-    #   package = config.boot.kernelPackages.nvidiaPackages.production;
+    #   package = config.boot.kernelPackages.nvidiaPackages.stable;
+    #   open = true;
     # };
 
     # Opengl(?)
