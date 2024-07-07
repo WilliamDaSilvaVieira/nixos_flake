@@ -84,7 +84,7 @@
 
   # Select internationalisation properties.
   i18n = {
-    defaultLocale = "en_US.UTF-8"; # Erros, Warnings, Etc ...
+    defaultLocale = "pt_BR.UTF-8"; # Erros, Warnings, Etc ...
     extraLocaleSettings = {
       LC_ADDRESS = "pt_BR.UTF-8";
       LC_MEASUREMENT = "pt_BR.UTF-8";
