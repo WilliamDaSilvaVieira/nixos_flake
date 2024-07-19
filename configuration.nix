@@ -365,7 +365,6 @@
       spice-protocol
       win-virtio
       win-spice
-      gnome.adwaita-icon-theme
 
       #### Programing
       ### Languages
@@ -429,7 +428,7 @@
       wlroots
 
       ani-cli
-      mangal
+      stable.mangal
       mangohud
       nixpkgs-23_11.yuzu-mainline
       ryujinx
