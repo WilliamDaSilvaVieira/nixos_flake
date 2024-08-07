@@ -21,17 +21,17 @@
   # Boot.
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    # extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+    extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
     kernelParams = [
-      # "nvidia_drm.modeset=1"
+      "nvidia_drm.modeset=1"
       "amd_iommu=on"
       "iommu=pt"
     ];
     kernelModules = [
-      # "nvidia"
-      # "nvidia_modeset"
-      # "nvidia_uvm"
-      # "nvidia_drm"
+      "nvidia"
+      "nvidia_modeset"
+      "nvidia_uvm"
+      "nvidia_drm"
       "vfio-pci"
     ];
     # blacklistedKernelModules = [ "kms" ];
@@ -187,7 +187,7 @@
       enable = true;
       xkb.layout = "br";
       excludePackages = with pkgs; [ xterm ];
-      # videoDrivers = [ "nvidia" ];
+      videoDrivers = [ "nvidia" ];
       displayManager.startx.enable = true;
       windowManager.awesome.enable = true;
     };
@@ -202,19 +202,19 @@
     };
 
     # Nvidia
-    # nvidia = {
-    #   powerManagement.enable = true;
-    #   forceFullCompositionPipeline = true;
-    #   nvidiaSettings = true;
-    #   modesetting.enable = true;
-    #   package = config.boot.kernelPackages.nvidiaPackages.stable;
-    #   open = true;
-    # };
+    nvidia = {
+      powerManagement.enable = true;
+      forceFullCompositionPipeline = true;
+      nvidiaSettings = true;
+      modesetting.enable = true;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      open = false;
+    };
 
     # Opengl(?)
     graphics = {
       enable = true;
-      # extraPackages = with pkgs; [ nvidia-vaapi-driver ];
+      extraPackages = with pkgs; [ nvidia-vaapi-driver ];
     };
 
     # PulseAudio
@@ -550,10 +550,10 @@
 
     KITTY_ENABLE_WAYLAND = "1";
 
-    # LIBVA_DRIVER_NAME = "nvidia";
+    LIBVA_DRIVER_NAME = "nvidia";
     XDG_SESSION_TYPE = "wayland";
-    # GBM_BACKEND = "nvidia-drm";
-    # __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    GBM_BACKEND = "nvidia-drm";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
 
     EDITOR = "hx";
     VISUAL = "hx";
