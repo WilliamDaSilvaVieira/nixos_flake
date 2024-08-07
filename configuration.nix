@@ -354,7 +354,7 @@
       ffmpeg
       ffmpegthumbnailer
       mpv
-      cinnamon.warpinator
+      pkgs.warpinator
       transmission_4-gtk
 
       #Virtualization
