@@ -203,7 +203,10 @@
 
     # Nvidia
     nvidia = {
-      powerManagement.enable = true;
+      powerManagement = {
+        enable = true;
+        finegrained = false;
+      };
       forceFullCompositionPipeline = true;
       nvidiaSettings = true;
       modesetting.enable = true;
@@ -550,10 +553,10 @@
 
     KITTY_ENABLE_WAYLAND = "1";
 
-    LIBVA_DRIVER_NAME = "nvidia";
+    # LIBVA_DRIVER_NAME = "nvidia";
     XDG_SESSION_TYPE = "wayland";
-    GBM_BACKEND = "nvidia-drm";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    # GBM_BACKEND = "nvidia-drm";
+    # __GLX_VENDOR_LIBRARY_NAME = "nvidia";
 
     EDITOR = "hx";
     VISUAL = "hx";
