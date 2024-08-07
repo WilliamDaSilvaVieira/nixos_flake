@@ -21,7 +21,6 @@
   # Boot.
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
     kernelParams = [
       "nvidia_drm.modeset=1"
       "amd_iommu=on"
@@ -210,7 +209,7 @@
       forceFullCompositionPipeline = true;
       nvidiaSettings = true;
       modesetting.enable = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
       open = false;
     };
 
