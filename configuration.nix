@@ -210,7 +210,7 @@
       nvidiaSettings = true;
       modesetting.enable = true;
       package = config.boot.kernelPackages.nvidiaPackages.beta;
-      open = false;
+      open = true;
     };
 
     # Opengl(?)
