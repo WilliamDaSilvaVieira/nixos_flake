@@ -23,6 +23,8 @@
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
       "nvidia_drm.modeset=1"
+      "fbdev=1"
+      "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
       "amd_iommu=on"
       "iommu=pt"
     ];
@@ -319,7 +321,7 @@
 
       #### Vulkan
       vulkan-tools
-      vulkan-validation-layers
+      stable.vulkan-validation-layers
       vulkan-loader
       vulkan-headers
 
@@ -552,10 +554,10 @@
 
     KITTY_ENABLE_WAYLAND = "1";
 
-    # LIBVA_DRIVER_NAME = "nvidia";
+    LIBVA_DRIVER_NAME = "nvidia";
     XDG_SESSION_TYPE = "wayland";
-    # GBM_BACKEND = "nvidia-drm";
-    # __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    GBM_BACKEND = "nvidia-drm";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
 
     EDITOR = "hx";
     VISUAL = "hx";
