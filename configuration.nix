@@ -347,7 +347,7 @@
           "--enable-blink-features=MiddleClickAutoscroll"
         ];
       })
-      librewolf
+      stable.librewolf
 
       #### Media
       yt-dlp
