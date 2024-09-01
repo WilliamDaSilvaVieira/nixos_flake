@@ -23,7 +23,7 @@
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
       "nvidia_drm.modeset=1"
-      "fbdev=1"
+      "nvidia_drm.fbdev=1"
       "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
       "amd_iommu=on"
       "iommu=pt"
@@ -155,14 +155,14 @@
     devmon = {
       enable = true;
     };
-    greetd = {
-      enable = false;
-      settings = {
-        default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu -t -c Hyprland";
-        };
-      };
-    };
+    # greetd = {
+    #   enable = false;
+    #   settings = {
+    #     default_session = {
+    #       command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu -t -c Hyprland";
+    #     };
+    #   };
+    # };
     openssh = {
       enable = true;
       settings = {
@@ -193,6 +193,8 @@
       windowManager.awesome.enable = true;
     };
     spice-vdagentd.enable = true;
+    # desktopManager.cosmic.enable = true;
+    # displayManager.cosmic-greeter.enable = true;
   };
 
   # Hardware
@@ -466,6 +468,8 @@
     hyprland = {
       enable = true;
       # package = pkgs.nixpkgs-23_11.hyprland;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       xwayland = {
         enable = true;
       };
@@ -483,8 +487,9 @@
   # Xdg
   xdg = {
     portal = {
+      config.common.default = "*";
       enable = true;
-      # wlr.enable = true;
+      wlr.enable = true;
     };
     icons.enable = true;
     mime = {
