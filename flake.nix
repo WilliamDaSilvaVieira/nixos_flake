@@ -11,6 +11,13 @@
     };
     # Nixpkgs-f2k
     nixpkgs-f2k.url = "github:moni-dz/nixpkgs-f2k";
+    #Hyprland
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    #Cosmic
+    # nixos-cosmic = {
+    #   url = "github:lilyinstarlight/nixos-cosmic";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
   outputs =
     {
@@ -19,6 +26,7 @@
       nixpkgs-stable,
       nixpkgs-23_11,
       home-manager,
+      # nixos-cosmic,
       ...
     }@inputs:
     let
@@ -47,7 +55,12 @@
               home-manager.users.william = {
                 imports = [ ./home.nix ];
               };
+              # nix.settings = {
+              #   substituters =  ["https://cosmic.cachix.org/"];
+              #   trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRe102smYzA85dPE=" ];
+              # };
             }
+            # nixos-cosmic.nixosModules.default
           ];
         };
       };
