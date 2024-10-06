@@ -18,6 +18,8 @@
     #   url = "github:lilyinstarlight/nixos-cosmic";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
+    #Zen-Browser
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
   outputs =
     {

@@ -349,8 +349,7 @@
           "--enable-blink-features=MiddleClickAutoscroll"
         ];
       })
-      stable.librewolf
-
+      inputs.zen-browser.packages."${system}".specific
       #### Media
       yt-dlp
       cava
