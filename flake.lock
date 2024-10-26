@@ -40,11 +40,11 @@
         "nixpkgs-stable": "nixpkgs-stable_2"
       },
       "locked": {
-        "lastModified": 1729818968,
-        "narHash": "sha256-dP4MIBrDc3Z+tgH9j+42aikYE+Jyndzg7xlGdU0+cNM=",
+        "lastModified": 1729908225,
+        "narHash": "sha256-e2rUOJXPgeYxtuAwfzeqvYirQp8rbLNRfL/D+Hr2cO0=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "dfbc53025ea2527fbf2aca46be92cf725360f4a9",
+        "rev": "825505b43c276d6efd41c69f9dd5ca3dfc522284",
         "type": "github"
       },
       "original": {
@@ -211,11 +211,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1729888739,
-        "narHash": "sha256-8R147aQIXbTDzC7S7LLAY2y1bJt8Py2lN40frWS+iGA=",
+        "lastModified": 1729957831,
+        "narHash": "sha256-X5LIJ8utssN0iBs99ymuRkcOAkirY1o8EFXEiGbDb3Y=",
         "ref": "refs/heads/main",
-        "rev": "e5384774a8258e44cc7f7b690ce4f6ad1f92b562",
-        "revCount": 5374,
+        "rev": "c356e425008cba8bd0c87487a2c79b9be4eda2aa",
+        "revCount": 5378,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
@@ -370,11 +370,11 @@
         "parts": "parts"
       },
       "locked": {
-        "lastModified": 1729824863,
-        "narHash": "sha256-onW39LS8IjNwPXsQwhE1o/5xOH5T60QeEhojNc0j8/8=",
+        "lastModified": 1729910907,
+        "narHash": "sha256-nt+SaRlI4Bq/flvQjoa9W90MsZSgjQNcZP2IiUq+5tk=",
         "owner": "moni-dz",
         "repo": "nixpkgs-f2k",
-        "rev": "423f92bfdf5ee47833a62dfa0d0122edb3a05571",
+        "rev": "300b8b3994059ab12f0af8726d3ea2176b343fce",
         "type": "github"
       },
       "original": {
@@ -500,11 +500,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1729823278,
-        "narHash": "sha256-gmWp80g/xNwB8tq8pJ8HuePE7lbOJ2VMxxLao04NAdY=",
+        "lastModified": 1729902363,
+        "narHash": "sha256-HWeds5ORD7dZZPco7qKrQHCKt1arH21UYPDvOi9THZI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "12b2c139d47b49f127537876d67796f729a1633f",
+        "rev": "54830391487253422f0ccab55fc557b2e725ace0",
         "type": "github"
       },
       "original": {
