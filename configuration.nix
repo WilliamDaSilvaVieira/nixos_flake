@@ -594,6 +594,7 @@
     settings = {
       experimental-features = "nix-command flakes";
       auto-optimise-store = true;
+      download-buffer-size = 16777216; # Define o buffer para 16MB
     };
     gc = {
       automatic = true;
