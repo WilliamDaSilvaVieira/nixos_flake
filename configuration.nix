@@ -596,6 +596,8 @@
       auto-optimise-store = true;
       download-buffer-size = 268435456; # Define o buffer para 256MB
       binary-caches = [ "https://cache.nixos.org" ];
+      narinfo-cache-positive-ttl = 86400; # 1 dia para pacotes existentes
+      narinfo-cache-negative-ttl = 3600; # 1 hora para pacotes inexistentes
     };
     gc = {
       automatic = true;
