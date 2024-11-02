@@ -595,6 +595,7 @@
       experimental-features = "nix-command flakes";
       auto-optimise-store = true;
       download-buffer-size = 268435456; # Define o buffer para 256MB
+      binary-caches = [ "https://cache.nixos.org" ];
     };
     gc = {
       automatic = true;
