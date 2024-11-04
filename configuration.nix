@@ -429,7 +429,7 @@
       grim
       slurp
       wl-clipboard
-      wf-recorder
+      stable.wf-recorder
       wlroots
 
       ani-cli
