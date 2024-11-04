@@ -355,7 +355,7 @@
       cava
       pavucontrol
       zathura
-      yazi
+      stable.yazi
       ffmpeg
       ffmpegthumbnailer
       mpv
