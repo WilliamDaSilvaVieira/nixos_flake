@@ -357,7 +357,6 @@
       ffmpeg
       ffmpegthumbnailer
       mpv
-      pkgs.warpinator
       transmission_4-gtk
 
       #Virtualization
