@@ -55,9 +55,11 @@
 
     firewall = {
       allowedTCPPorts = [
+        53317 # LocalSend
         5900
       ];
       allowedUDPPorts = [
+        53317 # LocalSend
         5900
       ];
     };
