@@ -357,6 +357,7 @@
       ffmpeg
       ffmpegthumbnailer
       mpv
+      localsend
       transmission_4-gtk
 
       #Virtualization
