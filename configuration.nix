@@ -538,7 +538,7 @@
 
   # Variables
   environment.variables = {
-    XCURSOR_SIZE = "48";
+    XCURSOR_SIZE = "32";
 
     FZF_DEFAULT_COMMAND = "fd -H";
 
