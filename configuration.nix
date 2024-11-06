@@ -343,7 +343,7 @@
       #### Browser
       (google-chrome.override {
         commandLineArgs = [
-          "--force-device-scale-factor=1.5"
+          "--force-device-scale-factor=1.333333"
           "--enable-blink-features=MiddleClickAutoscroll"
         ];
       })
