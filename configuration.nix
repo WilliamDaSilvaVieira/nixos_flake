@@ -553,7 +553,7 @@
     GDK_BACKEND = "wayland,x11";
 
     QT_QPA_PLATFORM = "wayland;xcb";
-    QT_SCALE_FACTOR = "1.5";
+    QT_SCALE_FACTOR = "1.333333";
     QT_AUTO_SCREEN_SCALE_FACTOR = "0";
 
     KITTY_ENABLE_WAYLAND = "1";
