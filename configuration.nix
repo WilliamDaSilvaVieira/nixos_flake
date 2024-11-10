@@ -55,11 +55,9 @@
 
     firewall = {
       allowedTCPPorts = [
-        53317 # LocalSend
         5900
       ];
       allowedUDPPorts = [
-        53317 # LocalSend
         5900
       ];
     };
@@ -358,7 +356,6 @@
       ffmpeg
       ffmpegthumbnailer
       mpv
-      localsend
       transmission_4-gtk
 
       #Virtualization
@@ -481,6 +478,10 @@
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
+    };
+    localsend = {
+      enable = true;
+      openFirewall = true;
     };
   };
 
