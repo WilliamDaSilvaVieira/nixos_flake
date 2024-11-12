@@ -347,6 +347,10 @@
         ];
       })
       inputs.zen-browser.packages."${system}".specific
+      tor-browser
+
+      tor
+
       #### Media
       yt-dlp
       cava
