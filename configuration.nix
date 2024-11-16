@@ -353,7 +353,7 @@
 
       #### Media
       yt-dlp
-      cava
+      stable.cava
       pavucontrol
       zathura
       yazi
