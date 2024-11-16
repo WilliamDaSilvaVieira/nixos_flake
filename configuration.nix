@@ -392,6 +392,7 @@
 
       # Editors
       helix
+      vscode
 
       # Tools
       lazygit
