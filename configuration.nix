@@ -124,6 +124,9 @@
 
   # Services
   services = {
+    dbus = {
+      implementation = "broker";
+    };
     pipewire = {
       enable = true;
       audio = {
