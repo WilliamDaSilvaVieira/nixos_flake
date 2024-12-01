@@ -66,7 +66,7 @@
   # Fonts
   fonts = {
     packages = with pkgs; [
-      nerdfonts
+      stable.nerdfonts
       noto-fonts
       noto-fonts-emoji
       noto-fonts-color-emoji
