@@ -447,6 +447,8 @@
       stable.rpcs3
       tradingview
 
+      appimage-run
+      
       #NTFS
       fuse
       ntfs3g
