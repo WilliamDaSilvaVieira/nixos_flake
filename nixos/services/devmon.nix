@@ -1,0 +1,6 @@
+{ ... }:
+{
+  services.devmon = {
+    enable = true;
+  };
+}
