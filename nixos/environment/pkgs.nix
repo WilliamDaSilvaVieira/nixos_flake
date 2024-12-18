@@ -15,6 +15,7 @@
       killall
       zip
       unzip
+      unrar
       exfat
       lm_sensors
       git
