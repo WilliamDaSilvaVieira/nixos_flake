@@ -10,7 +10,7 @@
       gcc
       glibc
       clang
-      llvmPackages.bintools
+      stable.llvmPackages.bintools
       wget
       killall
       zip
@@ -84,7 +84,7 @@
       python3
 
       # Dependencies
-      rocmPackages.llvm.lldb
+      stable.rocmPackages.llvm.lldb
 
       # Markdown
       marksman
