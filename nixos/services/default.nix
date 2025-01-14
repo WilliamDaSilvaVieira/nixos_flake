@@ -10,6 +10,7 @@
     ./picom.nix
     ./pipewire.nix
     ./printing.nix
+    ./pulseaudio.nix
     ./spice-vdagentd.nix
     ./udisks2.nix
     ./xserver.nix
