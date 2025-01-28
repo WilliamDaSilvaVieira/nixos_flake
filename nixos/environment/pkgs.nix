@@ -19,6 +19,7 @@
       exfat
       lm_sensors
       git
+      xdg-user-dirs
 
       libnotify
       exiftool
