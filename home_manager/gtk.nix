@@ -12,7 +12,7 @@
       name = "Graphite-Dark";
     };
     iconTheme = {
-      package = pkgs.tela-circle-icon-theme;
+      package = pkgs.stable.tela-circle-icon-theme;
       name = "Tela-circle";
     };
   };
