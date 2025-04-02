@@ -146,7 +146,7 @@
       nixpkgs-23_11.yuzu-mainline
       ryujinx
       fceux
-      zsnes2
+      stable.zsnes2
       stable.cemu
       stable.rpcs3
       tradingview
